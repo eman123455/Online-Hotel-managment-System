@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Employee;
+<h1>Edit tthe Employee'sData</h1>
+
+<form method="post" asp-action="Edit">
+  @*  <div asp-validation-summary="All"></div>*@
+    <div class="form-group">
+        <label asp-for="Emp_Name">Emp_Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Emp_Name">
+   @*     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>*@
+    <span asp-validation-for="Emp_Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">Address </label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="enter your address" asp-for="Address">
+    </div>
+    <span asp-validation-for=" Address" class="text-danger"></span>
+    <div class="form-group">
+        <label asp-for="job_Description">job_Description </label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="job_Description" asp-for="job_Description">
+    </div>
+    <span asp-validation-for="job_Description" class="text-danger"></span>
+    <div class="form-group">
+        <label asp-for="HotelId">Hotel_ID</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Hotel_ID" asp-for="HotelId">
+    </div>
+    <span asp-validation-for="HotelId" class="text-danger"></span>
+    <br/>
+    <button type="submit" class="btn btn-primary">Update</button>
+
+</form>
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

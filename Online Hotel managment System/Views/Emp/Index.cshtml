@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Employee>
+
+<h1 color="red">Welcome , our Employee</h1>
+<button type="submit" class="btn btn-primary"><a class="nav-link text-dark" asp-area="" asp-controller="Emp" asp-action="NewEmp">ADD</a></button>
+<br />
+<br />
+<br />
+<br />
+<br />
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Employee name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Job_Description</th>
+            <th scope="col">Hotel_ID</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(var item in Model)
+  
+          {  <tr>
+                <th>@item.Emp_ID</th>
+                <td>@item.Emp_Name</td>
+                <td>@item.Address</td>
+                <td>@item.job_Description</td>
+                <td>@item.HotelId</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Emp"  class="btn btn-light" asp-route-Id="@item.Emp_ID">Update</a>
+                    <a asp-action="delete" asp-controller="Emp" class="btn btn-light" asp-route-Id="@item.Emp_ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
